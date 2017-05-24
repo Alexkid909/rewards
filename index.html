@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rewards!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:site_name" content="Alex Robinson - Portfolio"/>
+	<meta property="og:title" content="Rewards!."/>
+	<meta property="og:description" content="A rewards app that lets your kids redeem points for completing task then collect rewards by cashing in their points."/>
+	<meta property="og:image" content="http://www.alexkid.me/images/preview.png">
+	<meta property="og:type" content="website"/>	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Chewy" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+	<body>
+		<div class="app">
+
+			<div class="nav">
+				<div class="nav-container">
+					<div class="nav-section nav-main">
+						<ul>
+							<li>
+								<a href="">
+									<div class="control navigate_to_tasks" onclick="view.slideToSection(event,0);"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="control navigate_to_points" onclick="view.slideToSection(event,1);"></div>		
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="control navigate_to_rewards" onclick="view.slideToSection(event,2);"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="nav-section nav-pull-right">
+						<ul>
+							<li class="parent-mode-element">
+								<a href="" onclick="controller.approveAllClaimedTasksHandler(event)">
+									<div class="control approve_all" ></div>
+								</a>							
+							</li>
+							<li class="parent-mode-element">
+								<a href="" onclick="controller.changeParentModePin(event)">
+									<div class="control change_pin" ></div>
+								</a>							
+							</li>
+							<li>
+								<a href="" onclick="controller.toggleParentModeHandler(event)">
+									<div class="control toggle_parent_mode" ></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section-view titles">
+				<div class="section-container">
+					<div class="section" id="tasks_title">
+						<h1>My Tasks</h1>		
+					</div>
+					<div class="section">
+						<h1>My Points</h1>
+					</div>
+					<div class="section" id="rewards_title">
+						<h1>My Rewards</h1>						
+					</div>
+				</div>
+			</div>
+			<div class="section-view">	
+				<div class="section-container">
+					<div class="section-scrollbar-clipper">
+						<div class="section" id="tasks">
+							<div class="list task_list container">
+								<div class="list_controls parent-mode-element form-group" onclick="controller.addTaskHandler(event)">
+									<fieldset data-item-type="task">
+										<h2>Click to add some tasks</h2>
+										<div class="scroll-button-container left">
+											<img class="scroll-button" src="images/back.png" onclick="view.transitionPresetsHandler(event.target,'left')">
+										</div>
+										<div class="col-container">
+											<div class="row" style="transform: translateX(-25%);">
+													<div class="list-col img-task-control-col add-predefined-task">	<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/brush-teeth.png">
+																<h3>Brush Teeth</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">	<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/do-homework.png">
+																<h3>Do Homework</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">			
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/get-dressed.png">
+																<h3>Get Dressed</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/tidy-toys.png">
+																<h3>Tidy Toys</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/eat-tea.png">
+																<h3>Eat Tea</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/bath.jpg">
+																<h3>Behave in bath</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/behave.png">
+																<h3>Do as told</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-task-control-col add-predefined-task">
+														<div class="img-task-control-wrapper">
+															<div class="img-container">
+																<img class="img-task-control" src="images/bed.png">
+																<h3>Behave at bedtime</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>						
+											</div>
+										</div>
+										<div class="scroll-button-container right">
+											<img class="scroll-button" src="images/next.png" onclick="view.transitionPresetsHandler(event.target,'right')">
+										</div>		
+									</fieldset>
+									<fieldset data-item-type="task">
+										<h2>Or enter a task title of your own</h2>
+										<div class="row task-title-input-container">
+											<input type="text" class="title" data-item-field="title" data-item-fieldType="control_input" onclick="controller.toggleInputEditableHandler(event)" onkeyup="controller.addTaskHandler(event)" placeholder="Add a task" data-default-placeholder="Add a task">
+										</div>
+										<p id="new_task_title_validation" class="validation error hidden clearfix">Please enter a title.</p>
+									</fieldset>
+
+								</div>
+								<ul id="tasks" class="row">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="section-scrollbar-clipper">
+						<div class="section" id="points" >
+							<div class="points_total_container">
+								<img class="points_total_image" src="images/star.png">
+								<h2 class="points_total"></h2>					
+							</div>
+						</div>
+					</div>
+					<div class="section-scrollbar-clipper">
+						<div class="section" id="rewards">
+							<div class="list reward_list container">	
+								<div class="list_controls parent-mode-element form-group" onclick="controller.addRewardHandler(event)">
+									<fieldset data-item-type="reward">
+										<h2>Click to add some rewards</h2>
+										<div class="scroll-button-container left">
+<!-- 											<img class="scroll-button" src="images/back.png" onclick="view.transitionPresetsHandler(event.target,'left')"> -->
+										</div>
+										<div class="col-container">
+											<div class="row">
+													<div class="list-col img-reward-control-col add-predefined-reward">	<div class="img-reward-control-wrapper">
+															<div class="img-container">
+																<img class="img-reward-control" src="images/icecream.png">
+																<h3>Ice Cream</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-reward-control-col add-predefined-reward">	<div class="img-reward-control-wrapper">
+															<div class="img-container">
+																<img class="img-reward-control" src="images/soft-play.jpg">
+																<h3>Soft Play</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">			
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-reward-control-col add-predefined-reward">
+														<div class="img-reward-control-wrapper">
+															<div class="img-container">
+																<img class="img-reward-control" src="images/sweeties.png">
+																<h3>Sweeties</h3>	
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>
+													<div class="list-col img-reward-control-col add-predefined-reward">
+														<div class="img-reward-control-wrapper">
+															<div class="img-container">
+																<img class="img-reward-control" src="images/game-time.png">
+																<h3>Game Time</h3>
+																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
+															</div>
+														</div>
+													</div>					
+ -->											</div>
+										</div>
+										<div class="scroll-button-container right">
+										</div>		
+									</fieldset>
+									<fieldset class="row" data-item-type="reward">
+										<input placeholder="Add a reward" data-default-placeholder="Add a reward" type="text" data-item-fieldType="control_input" data-item-field="title" onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
+										<input placeholder="Enter a reward value" data-default-placeholder="Enter a reward value" type="number" data-item-field="value" data-item-fieldType="control_input"onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
+										<p id="new_reward_value_validation" class="validation error hidden clearfix">Please enter a title.</p>
+									</fieldset>
+								</div>
+								<div class="message-container">
+									<h5></h5>		
+								</div>
+
+								<ul id="rewards" class="row">				
+								</ul>
+							</div>		
+						</div>
+					</div>
+					<div class="section hidden" id="claimed_tasks">
+						<div class="claimed_tasks parent-mode-element">
+							<h3>Claimed Tasks</h3>			
+							<ul id="claimed_tasks">
+								
+							</ul>
+							<button onclick="controller.approveAllClaimedTasksHandler(event)">Aprove all</button>
+						</div>
+					</div>
+					<div class="section hidden" id="claimed_tasks">
+						<div class="claimed_rewards parent-mode-element">
+							<h3>Claimed Rewards</h3>			
+							<ul id="claimed_rewards">
+								
+							</ul>
+						</div>			
+					</div>
+				</div>	
+			</div>
+		</div>
+
+		<audio class="cheer" src="sounds/cheer.mp3" type="audio/mpeg"></audio>
+		<audio class="woohoo" src="sounds/woohoo.mp3" type="audio/mpeg"></audio>
+		<audio class="uhoh" src="sounds/uhoh.mp3" type="audio/mpeg"></audio>
+		<audio class="ping" src="sounds/ping.mp3" type="audio/mpeg"></audio>		
+		<audio class="pop" src="sounds/pop.mp3" type="audio/mpeg"></audio>
+</body>
+
+
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/view.js"></script>
+
+</html>
