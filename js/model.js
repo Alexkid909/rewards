@@ -142,7 +142,6 @@ var model = {
 			localStorage.setItem(itemType+'List',JSON.stringify(model[itemType+'List'][itemType+'s']));
 		},
 		editItem: function(itemType,itemID,editedField,newValue) {
-			debugger;
 			itemID = itemID.replace("task","").replace("reward","");
 			var itemObj = itemType+"List";
 			var itemObjDataArray = itemType+"s";

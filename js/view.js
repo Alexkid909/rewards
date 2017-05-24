@@ -306,8 +306,6 @@ var allInputs = app.querySelectorAll('input');
 var listInputs = app.querySelectorAll('input[data-item-fieldtype=list_input]');
 var imgContainer;
 
-// view.displayClaimedTasks();
-// view.displayClaimedRewards();
 view.displayRewardPointsTotal();
 view.displayHideParentModeLements();
 view.setupEventListeners();
