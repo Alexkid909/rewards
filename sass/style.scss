@@ -103,7 +103,7 @@ fieldset {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	padding: 1em 2em;
+	// padding: 1em 2em;
 }
 
 ul {
@@ -338,21 +338,23 @@ input[disabled] {
     .scroll-button-container{
 		display: inline-block;
 		position: absolute;
+		width: 7.5%;
 		top: 50%;
+		transform: translateY(-50%);
 		&.left {
-			left: 1.5em;
+			left: 0;
 		}		
 		&.right {
-			right: 1.5em;
+			right: 0;
 		}
 	    img.scroll-button {
 			height: 7.5em;
-			width: 5em;
+			width: 100%;
 	    }
 	}
 	.col-container {
 		overflow: hidden;
-		width: 90%;
+		width: 85%;
 		display: inline-block;
 		.row {
     		width: 200%;
@@ -661,6 +663,11 @@ h2.points_total  {
 		max-width: 100%;
 	}
 
+	.section-scrollbar-clipper {
+		.section {
+			width: 100%;
+		}
+	}	
 }
 
 @media (max-device-width: 414px) and (max-device-height: 736px) {
@@ -671,6 +678,16 @@ h2.points_total  {
 
 	.list-col {
 		width: 50%;
+		display: inline-block;
 	}
 
+	.list_controls .img-task-control-col, .list_controls .img-reward-control-col {
+		width: 25%;
+	}
+
+	.list_controls {
+		.col-container {
+			width: 85%;
+		}
+	}
 }

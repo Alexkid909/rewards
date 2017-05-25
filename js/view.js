@@ -3,7 +3,7 @@ var view = {
 	displayTaskList: function() {
 		var taskListHTML = model.taskList.tasks.map((task,position) => {
 			var claimedClass = task.claimed ? "animate-done" : ""; 
-			return `<li data-item-id="task${position}" class="col-sm-4 list-col">
+			return `<li data-item-id="task${position}" class="col-xs-4 list-col">
 				<fieldset data-item-type="task">
 					<input type="text" class="list_input title" data-item-field="title" data-item-fieldType="list_input" value="${task.title}" onkeypress="controller.editItemHandler(event)" disabled>
 					<div class="img-container">
@@ -29,7 +29,7 @@ var view = {
 	displayRewardList: function() {
 		var data = model.rewardList.rewards;
 		var rewardListHTML = data.map((reward,position) => 
-			`<li data-item-id="reward${position}" class="col-sm-4">
+			`<li data-item-id="reward${position}" class="col-xs-4 list-col">
 				<fieldset data-item-type="reward">
 					<input type="text" class="list_input title" data-item-field="title" data-item-fieldType="list_input" value="${reward.title}" onkeypress="controller.editItemHandler(event)" disabled>
 					<div class="img-container claimButton">
