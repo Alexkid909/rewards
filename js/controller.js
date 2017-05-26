@@ -1,4 +1,7 @@
 var controller = {
+	variables: {
+		
+	},
 	addTaskHandler: function(e) {
 		var predefinedTaskGroup = e.target.getParentOfClassName('add-predefined-task')
 		if(predefinedTaskGroup) {
@@ -141,7 +144,6 @@ var controller = {
 		};
 	},
 	deleteItemHandler: function(e) {
-		
 		var parentItem = e.target.getParentOfTagName("fieldset"); 
 		var itemType = parentItem.dataset.itemType
 		var itemID = parentItem.id;
@@ -154,7 +156,6 @@ var controller = {
 		};
 	},
 	claimRewardHandler: function(e) {
-
 		var rewardClaimedLi = e.target.getParentOfTagName('li');
 		var rewardClaimedFieldset = e.target.getParentOfTagName('fieldset');
 		var rewardClaimed =	rewardClaimedLi.dataset.itemId.replace("reward","");
@@ -167,7 +168,6 @@ var controller = {
 			rewardClaimedFieldset.classList.add('shake');
 			view.playRewardClaimedFail();
 		} else {
-			
 			rewardClaimedFieldset.addEventListener('animationend',function() {
 				rewardClaimedFieldset.classList.remove('popout');
 			})

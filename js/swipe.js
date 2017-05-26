@@ -30,7 +30,7 @@ function handleGesure() {
     }
     var distance = calcDistance();
 
-    if (distance.x > distance.y) {
+    if (distance.x > distance.y && distance.x > 10) {
         if (touchendX < touchstartX) {
             newSection = (currentSection + 1)
         } else if (touchendX > touchstartX) {
