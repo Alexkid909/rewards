@@ -171,7 +171,6 @@ var view = {
 			const translateXPercentage = "translateX(-"+(sectionNum)*percentagePerSection+"%)";
 			document.documentElement.style.setProperty("--sliderTranslateX",translateXPercentage);		
 			model.mode.currentSection = sectionNum;
-			console.log(model.mode.currentSection);
 	    }
 	},
 	transitionPresetsHandler: function(target,direction) {
@@ -226,7 +225,9 @@ var view = {
 			};
 		});
 		document.addEventListener('click', function(e) {
+
 			if(e.target.dataset.itemFieldtype != "list_input") {
+				view.setListInputs;
 				listInputs.forEach(listInput => {
 					listInput.disabled = "true";
 					var itemType = listInput.getParentOfTagName('fieldset').dataset.itemType;
@@ -246,7 +247,6 @@ var view = {
 		});	
 	},
 	setImgContainerHeight: function(imgContainerGroups) {
-		debugger;
 		imgContainerGroups.forEach(function(imgContainerGroup) {
 			var instance = 0;
 			var setImgConHeight = setInterval(function() {
@@ -261,6 +261,9 @@ var view = {
 				}
 			},10);
 		});
+	},
+	setListInputs: function () {
+		listInputs = app.querySelectorAll('input[data-item-fieldtype=list_input]')
 	}
 };
 
@@ -308,7 +311,8 @@ view.displayTaskList();
 view.displayRewardList();
 
 var allInputs = app.querySelectorAll('input');
-var listInputs = app.querySelectorAll('input[data-item-fieldtype=list_input]');
+var listInputs;
+view.setListInputs();
 var imgContainer;
 
 view.displayRewardPointsTotal();
