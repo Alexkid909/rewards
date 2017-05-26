@@ -134,7 +134,8 @@ input[disabled] {
 .section-view {
   overflow: hidden; }
   .section-view:not(.titles) {
-    transform: translateY(41%); }
+    transform: translateY(41%);
+    height: 71vh; }
     .section-view:not(.titles) .section-scrollbar-clipper {
       overflow-x: hidden; }
       .section-view:not(.titles) .section-scrollbar-clipper .section {
@@ -214,11 +215,18 @@ input[disabled] {
   .container.list {
     border-radius: 5em;
     text-align: center; }
+    .container.list.reward_list ul li .img-container {
+      height: var(--rewardListImgContainerHeight); }
+    .container.list.reward_list ul li input {
+      width: var(--rewardListImgContainerHeight); }
+    .container.list.task_list ul li .img-container {
+      height: var(--taskListImgContainerHeight); }
+    .container.list.task_list ul li input {
+      width: var(--taskListImgContainerHeight); }
     .container.list ul li {
       margin-bottom: 1.5em; }
       .container.list ul li .img-container {
         position: relative;
-        height: var(--taskListImgContainerHeight);
         background-size: cover; }
         .container.list ul li .img-container .img-task, .container.list ul li .img-container .img-reward {
           height: 100%;
@@ -232,7 +240,6 @@ input[disabled] {
         margin-bottom: 1em;
         left: 50%;
         display: block;
-        width: var(--taskListImgContainerHeight);
         padding-top: 0.25em; }
 
 .img-task-control-wrapper, .img-reward-control-wrapper {
@@ -273,7 +280,7 @@ input[disabled] {
       transition: all 0.3s ease-in; }
   .list_controls .row {
     margin-bottom: 1em; }
-    .list_controls .row.task-title-input-container {
+    .list_controls .row.task-title-input-container, .list_controls .row.reward-title-input-container {
       padding: 0 1em; }
   .list_controls .img-task-control-col, .list_controls .img-reward-control-col {
     width: 12.5%;
@@ -518,19 +525,25 @@ h2.points_total {
     max-width: 100%; }
 
   .section-scrollbar-clipper .section {
-    width: 100%; } }
+    width: 100%; }
+
+  #rewards .list_controls .col-container .row {
+    width: 100%; }
+
+  #rewards .list_controls .img-reward-control-col {
+    width: 25%; } }
 @media (max-device-width: 414px) and (max-device-height: 736px) {
   body {
     font-size: 1.75vw; }
 
-  .list-col {
-    width: 50%;
-    display: inline-block; }
-
-  .list_controls .img-task-control-col, .list_controls .img-reward-control-col {
+  #tasks .list_controls .img-task-control-col {
     width: 25%; }
 
-  .list_controls .col-container {
-    width: 85%; } }
+  #rewards .list_controls .img-reward-control-col {
+    width: 50%; }
+
+  .list-col {
+    width: 50%;
+    display: inline-block; } }
 
 /*# sourceMappingURL=style.css.map */

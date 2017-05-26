@@ -166,9 +166,13 @@ var view = {
 			e.preventDefault();
 		};
 		const sections = sectionContainer.querySelectorAll('.section:not(.hidden)');
-		const percentagePerSection = 100 / sections.length;
-		const translateXPercentage = "translateX(-"+(sectionNum)*percentagePerSection+"%)";
-		document.documentElement.style.setProperty("--sliderTranslateX",translateXPercentage);		
+	    if (sectionNum >= 0 && sectionNum < sections.length ) {
+			const percentagePerSection = 100 / sections.length;
+			const translateXPercentage = "translateX(-"+(sectionNum)*percentagePerSection+"%)";
+			document.documentElement.style.setProperty("--sliderTranslateX",translateXPercentage);		
+			model.mode.currentSection = sectionNum;
+			console.log(model.mode.currentSection);
+	    }
 	},
 	transitionPresetsHandler: function(target,direction) {
 		var operator;
@@ -242,6 +246,7 @@ var view = {
 		});	
 	},
 	setImgContainerHeight: function(imgContainerGroups) {
+		debugger;
 		imgContainerGroups.forEach(function(imgContainerGroup) {
 			var instance = 0;
 			var setImgConHeight = setInterval(function() {

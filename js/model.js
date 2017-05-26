@@ -3,8 +3,9 @@ var model = {
 		parentMode: false,
 		pin: parseInt(localStorage.getItem('pin')) || 1234,
 		saveParentPin: function() {
-			localStorage.setItem('pin',this.pin)			
-		}
+			localStorage.setItem('pin',this.pin)
+		},
+		currentSection: undefined
 	},
 	messages: {
 		enterPin: 'Please enter the parent pin',

@@ -170,6 +170,7 @@ input[disabled] {
 	overflow: hidden;
 	&:not(.titles) {
 	    transform: translateY(41%);
+		height: 71vh;
 		.section-scrollbar-clipper {
 			overflow-x: hidden;
 			.section {
@@ -279,13 +280,36 @@ input[disabled] {
 	// margin-bottom: 2em;
 
 	&.list {
+		&.reward_list {
+			ul {
+				li {
+					.img-container {
+						height: var(--rewardListImgContainerHeight);
+					}
+					input {
+						width: var(--rewardListImgContainerHeight);
+					}
+				}
+			}
+		}
+		&.task_list {
+			ul {
+				li {
+					.img-container {
+						height: var(--taskListImgContainerHeight);
+					}
+					input {
+						width: var(--taskListImgContainerHeight);						
+					}
+				}
+			}
+		}		
 		border-radius: 5em;
 		text-align: center;
 		ul {
 			li {
 				.img-container {
 					position: relative;
-					height: var(--taskListImgContainerHeight);
 					background-size: cover;
 					.img-task,.img-reward {
 						height: 100%;
@@ -303,7 +327,6 @@ input[disabled] {
 				    margin-bottom: 1em;
 				    left: 50%;
 				    display: block;
-				    width: var(--taskListImgContainerHeight);
 				    padding-top: 0.25em;					
 				}
 			}
@@ -363,9 +386,10 @@ input[disabled] {
 	}
     .row {
     	margin-bottom: 1em;
-    	&.task-title-input-container {
+    	&.task-title-input-container,&.reward-title-input-container {
     		padding: 0 1em;
     	}
+
     }
     .img-task-control-col,.img-reward-control-col  {
     	width: 12.5%;
@@ -667,7 +691,26 @@ h2.points_total  {
 		.section {
 			width: 100%;
 		}
-	}	
+	}
+
+	#rewards {
+
+
+		.list_controls {
+			.col-container {
+				.row {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	#rewards {
+		.list_controls .img-reward-control-col {
+			width: 25%;
+		}
+	}
+
 }
 
 @media (max-device-width: 414px) and (max-device-height: 736px) {
@@ -676,18 +719,30 @@ h2.points_total  {
 		font-size: 1.75vw;
 	}
 
+	#tasks {
+		.list_controls .img-task-control-col {
+			width: 25%;
+		}		
+	}
+
+	#rewards {
+		.list_controls .img-reward-control-col {
+			width: 50%;
+		}
+	}
+
 	.list-col {
 		width: 50%;
 		display: inline-block;
 	}
 
-	.list_controls .img-task-control-col, .list_controls .img-reward-control-col {
-		width: 25%;
-	}
-
-	.list_controls {
-		.col-container {
-			width: 85%;
-		}
-	}
+	// #rewards {
+	// 	.list_controls {
+	// 		.img-reward-control-col {
+	// 			.add-predefined-reward {
+	// 				width: 50%;
+	// 			}
+	// 		}			
+	// 	}
+	// }
 }

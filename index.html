@@ -191,48 +191,53 @@
 										</div>
 										<div class="col-container">
 											<div class="row">
-													<div class="list-col img-reward-control-col add-predefined-reward">	<div class="img-reward-control-wrapper">
-															<div class="img-container">
-																<img class="img-reward-control" src="images/icecream.png">
-																<h3>Ice Cream</h3>
-																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
-															</div>
+												<div class="list-col img-reward-control-col add-predefined-reward">
+													<div class="img-reward-control-wrapper">
+														<div class="img-container">
+															<img class="img-reward-control" src="images/icecream.png">
+															<h3>Ice Cream</h3>
+															<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
 														</div>
 													</div>
-													<div class="list-col img-reward-control-col add-predefined-reward">	<div class="img-reward-control-wrapper">
-															<div class="img-container">
-																<img class="img-reward-control" src="images/soft-play.jpg">
-																<h3>Soft Play</h3>
-																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">			
-															</div>
+												</div>
+												<div class="list-col img-reward-control-col add-predefined-reward">
+													<div class="img-reward-control-wrapper">
+														<div class="img-container">
+															<img class="img-reward-control" src="images/soft-play.jpg">
+															<h3>Soft Play</h3>
+															<img class="img-plus addButton parent-mode-element"" src="images/plus.png">			
 														</div>
 													</div>
-													<div class="list-col img-reward-control-col add-predefined-reward">
-														<div class="img-reward-control-wrapper">
-															<div class="img-container">
-																<img class="img-reward-control" src="images/sweeties.png">
-																<h3>Sweeties</h3>	
-																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
-															</div>
+												</div>
+												<div class="list-col img-reward-control-col add-predefined-reward">
+													<div class="img-reward-control-wrapper">
+														<div class="img-container">
+															<img class="img-reward-control" src="images/sweeties.png">
+															<h3>Sweeties</h3>	
+															<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
 														</div>
 													</div>
-													<div class="list-col img-reward-control-col add-predefined-reward">
-														<div class="img-reward-control-wrapper">
-															<div class="img-container">
-																<img class="img-reward-control" src="images/game-time.png">
-																<h3>Game Time</h3>
-																<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
-															</div>
+												</div>
+												<div class="list-col img-reward-control-col add-predefined-reward">
+													<div class="img-reward-control-wrapper">
+														<div class="img-container">
+															<img class="img-reward-control" src="images/game-time.png">
+															<h3>Game Time</h3>
+															<img class="img-plus addButton parent-mode-element"" src="images/plus.png">
 														</div>
-													</div>					
- -->											</div>
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="scroll-button-container right">
 										</div>		
 									</fieldset>
 									<fieldset class="row" data-item-type="reward">
-										<input placeholder="Add a reward" data-default-placeholder="Add a reward" type="text" data-item-fieldType="control_input" data-item-field="title" onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
-										<input placeholder="Enter a reward value" data-default-placeholder="Enter a reward value" type="number" data-item-field="value" data-item-fieldType="control_input"onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
+										<h2>Or enter a reward of your own</h2>
+										<div class="row reward-title-input-container">
+											<input placeholder="Add a reward" data-default-placeholder="Add a reward" type="text" data-item-fieldType="control_input" data-item-field="title" onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
+											<input placeholder="Enter a reward value" data-default-placeholder="Enter a reward value" type="number" data-item-field="value" data-item-fieldType="control_input"onkeyup="controller.addRewardHandler(event)" onclick="controller.toggleInputEditableHandler(event)">
+										</div>										
 										<p id="new_reward_value_validation" class="validation error hidden clearfix">Please enter a title.</p>
 									</fieldset>
 								</div>
@@ -277,5 +282,7 @@
 <script type="text/javascript" src="js/model.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 <script type="text/javascript" src="js/view.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+
 
 </html>
